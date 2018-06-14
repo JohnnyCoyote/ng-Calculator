@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+
+<body ng-app="calculatorApp">
+  <div ng-controller="mainCtrl">
+    {{first +" "+ operator +" "+ second}}
+    <br>
+<p ng-if="showresult">{{result}}</p>
+<br>
+    <input type="number" ng-show="inputtoggle" ng-model="first" autofocus>
+    <input type="number" ng-show="!inputtoggle" ng-model="second">
+    <br>
+    <button ng-click="operator ='+'; inputtoggle = false">+</button>
+    <button ng-click="operator ='-'; inputtoggle = false">-</button>
+    <button ng-click="operator ='*'; inputtoggle = false">*</button>
+    <button ng-click="operator ='/'; inputtoggle = false">/</button>
+    <button ng-click="getResult(operator); showresult=true">=</button>
+    <button ng-click="inputtoggle = true; first =''; second=''; operator=''; result=''; showresult=false">C</button>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="scripts/app.js" type="text/javascript"></script>
+</body>
+</html>
